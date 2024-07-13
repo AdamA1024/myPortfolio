@@ -1,0 +1,45 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    margin-right: 5px; /* Add margin to move the switch left */
+
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background-color: #696868;
+    transition: background-color 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px; /* Make the width and height the same for a perfect circle */
+    left: 1.5px; /* Center the circle within the slider */
+    bottom: 1.5px; /* Center the circle within the slider */
+    border-radius: 50%; /* Make the pseudo-element a perfect circle */
+    background-color: white;
+    transition: transform 0.4s, background-color 0.4s;
+}
+
+
+
+input:checked + .slider:before {
+    transform: translateX(15px); /* Move the circle to the right when checked */
+    background-color: black;
+}
