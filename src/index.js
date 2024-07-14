@@ -20,7 +20,7 @@ root.render(
             links
           </button>
           <div class="dropdown-content">
-            <a href="www.linkedin.com/in/adamali123">LinkedIn</a>
+            <a href="https://linkedin.com/in/adamali123/">LinkedIn</a>
             <a href="https://www.instagram.com/adam.osmn/">Instagram</a>
           </div>
         </div>
