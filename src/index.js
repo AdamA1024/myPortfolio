@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Switch from './components/Switch'; // Import the Switch component
+import Switch from "./components/Switch"; // Import the Switch component
 import Card from "./components/Card"; // Import the Card component
 import { themes } from "./themes"; // Import the themes object
 import { ReactTyped } from "react-typed";
@@ -15,8 +15,15 @@ root.render(
     <div className="topnav">
       <b className="active"> </b>
       <div className="nav-right">
-        <a href="#home">home</a>
-        <a href="#links">links</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            links
+          </button>
+          <div class="dropdown-content">
+            <a href="www.linkedin.com/in/adamali123">LinkedIn</a>
+            <a href="https://www.instagram.com/adam.osmn/">Instagram</a>
+          </div>
+        </div>
         <Switch />
       </div>
     </div>
@@ -70,14 +77,14 @@ root.render(
       <Card
         title="BalanceBot"
         subtitle="Web Development, Computer Vision"
-        description="Self-balancing rover with object-detection capabilities. UI communication with onboard Pi via Node.js server on AWS. "
+        description="Self-balancing, remote control rover with object-detection capabilities. UI communication with onboard Pi and Arduino via Node.js server on AWS. "
         image="src/tr.jpg"
         theme={themes.blackTheme}
       />
     </div>
     <div className="card-container">
       <Card
-        title="Occupancy"
+        title="pplTrackrr"
         subtitle="Computer Vision"
         description="Occupancy tracking using OpenCV and Python, inspired by COVID-19 room occupancy limits."
         image="src/tr.jpg"
