@@ -2,7 +2,7 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ title, subtitle, description, image, cta, available, link, theme }) => {
+const Card = ({ title, subtitle, description, image, cta, available, link, theme}) => {
   const {
     backgroundColor,
     textColor
