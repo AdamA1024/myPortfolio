@@ -83,7 +83,15 @@ const App = () => {
 
       <div className="card-container">
         <div onClick={()=>oncardclick("FX Bot",
-          "to be updated")}>
+          `To be updated once completed but current concepts extend to:
+          - FX currency pairs
+          - Cloud deployment
+          - Backtesting
+          - Trade idea conception
+          - Porfolio optimization
+          - Trader dashboard UI
+          `
+          )}>
           <Card
             title="FX Bot"
             subtitle="Trading"
@@ -94,12 +102,12 @@ const App = () => {
         </div>
         <div onClick={() => oncardclick("RISCV CPU",
           `This was a project undertaken in a group of 4 for the Instruction Architecture and Compilers module at Imperial College London. The core task was to implement a RISC-V32i Single-Cycle CPU in SystemVerilog, before moving onto a pipelined version. As an extension, teams could also implement a Cache.
-          We were able to implement all parts, including a directly-mapped cache, therefore ranking us in the top teams. The project was an instrumental learning experience in terms of understanding computer architecture, and the importance of good communication and teamwork. 
-          I personally thoroughly enjoyed learning SystemVerilog - as such, I am currently extending the CPU to include static or dynamic branch-prediction schemes;
+          We were able to implement all parts, including a directly-mapped cache, therefore ranking us in the top teams. The project was an instrumental learning experience in terms of understanding computer architecture, and the importance of well-synchronised teamwork, since each member is responsible for different modules.
+          Personally, I thoroughly enjoyed learning SystemVerilog, and since then I have read books on digital design. As such, I am currently extending the CPU to include static or dynamic branch-prediction schemes;
           
-          BTFNT -  The "Backwards taken, forwards not taken" strategy is well-suited to programs operating in loops, where we often branch back to the start of the loop at the end of each iteration.
-          2-bit saturating counter - This is a simple scheme that requires two consecutive mispredictions to change the assumption of taking a branch or not.
-          2-level adaptive predictor - This is more complex, using a global history register to predict the outcome of a branch based on the history of all branches in the program. This works well with programs that exhibit patterns in their branching behaviour.`
+          - BTFNT: The "Backwards taken, forwards not taken" strategy is well-suited to programs operating in loops, where we often branch back to the start of the loop at the end of each iteration.
+          - 2-bit saturating counter: This is a simple scheme that requires two consecutive mispredictions to change the assumption of taking a branch or not.
+          - 2-level adaptive predictor: This is more complex, using a global history register to predict the outcome of a branch based on the history of all branches in the program. This works well with programs that exhibit patterns in their branching behaviour.`
           
          
         )}>
@@ -112,8 +120,15 @@ const App = () => {
           />
         </div>
         <div onClick={() => oncardclick("BalanceBot", 
-          `This was the 2nd year final project undertaken in a group of 2 EIE students and 4 EEE students at Imperial College London. The core task was to construct a remotely-controlled rover(using a provided chassis) capable of 
-          self-balancing according to a control algorithm. `)}>
+          `This was the 2nd year final project undertaken in a group of 2 EIE students and 4 EEE students at Imperial College London. There were several objectives for this:
+          - Designing a control algorithm to achieve self-balancing (both stationary and in motion)
+          - Designing current sensing circuitry to monitor power output and battery life
+          - Be remotely controlled via a web interface and the onboard ESP32 (WiFi module)
+          - Meet a wider purpose. For this we decided to implement object-detection for various toy animals that would be placed in the test arena.
+          
+          On the EIE subteam: we trained a YOLO object-detection model using pre-processed images from the Google Open Image Dataset, leveraging Google Colab's hardware acceleration in the process.
+          Ran a Node.js server on an AWS EC2 instance, to communicate with the React UI and the onboard Arduino (motor control)+Raspberry Pi(computer vision using Pi camera ) via HTTP.
+          Created a video stream from onboard the rover to the UI. The user can then prompt the object-detection based on what they see, which should return the name of the animal, and a textual description retrieved from a DynamoDB database.`)}>
           <Card
             title="BalanceBot"
             subtitle="Web Development, Computer Vision"
@@ -124,7 +139,12 @@ const App = () => {
         </div>
       </div>
       <div className="card-container">
-      <div onClick={() => oncardclick("pplTrackrr", "to be updated")}>          
+      <div onClick={() => oncardclick("pplTrackrr", `This was a summer project undertaken in a trio in Year 12 at Wilson's Grammar School as part of the CREST program, for which we achieved a Gold.
+        The project aim was to accurately calculate the number of occupants inside a room at any given time. It started off by using IR light gates to detect when a beam was broken, representing an occupant crossing the room boundary.
+        
+        The approach was primitive for a number of reasons, but largely due to only being suited to stores with separate entrances and exits. Instead, our next iteration was using an object-detection model from OpenCV to identify "people" and discern the direction they were moving in. This was enabled by placing a Pi camera and Raspberry Pi running the code directly above the store entrance.
+        
+        Each "person" becomes a "centroid", uniquely identified by an ID and the (x,y) coordinates of the centre of the bounding box around the person. The direction of motion is discerned by looking at the y coordinate of consecutive frames. Lastly, if an ID is detected to be missing for a number of frames, then it is removed from being tracked. This approach allows multiple centroids to be tracked whilst keeping an accurate count of store occupancy.`)}>          
         <Card
             title="pplTrackrr"
             subtitle="Computer Vision"
@@ -132,7 +152,8 @@ const App = () => {
             theme={themes.blackTheme}
           />
         </div>
-        <div onClick={() => oncardclick("Price-Prediction", "to be updated")}>
+        <div onClick={() => oncardclick("Price-Prediction", `*Disclaimer: not my work* Neural network taking historical data from AAPL close prices to determine the next day's close price for MSFT.
+          Used Yahoo finance to obtain historic data, and polynomial features transformation.`)}>
         <Card
           title="Price-Prediction"
           subtitle="Neural Networks"
@@ -149,11 +170,11 @@ const App = () => {
           theme={themes.greenTheme}
         />
         </div>
-        <div onClick={() => oncardclick("Blah", "to be updated ")}>
+        <div onClick={() => oncardclick("Blah", "to be updated. Most likely will be a trading FPGA related project. ")}>
         <Card
           title="Blah"
           subtitle="Blah, blah, blah"
-          description="hmmm who knows what the future holds? "
+          description="hmmm who knows what the future holds?"
           theme={themes.default}
         />
         </div>
