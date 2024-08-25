@@ -1,7 +1,7 @@
 import React from "react";
 import "./Modal.css";
 
-export const Modal = ({ title, content, onClose }) => {
+export const Modal = ({ title, content, onClose, theme }) => {
   return (
     <div
       className="modal-container"
@@ -11,7 +11,7 @@ export const Modal = ({ title, content, onClose }) => {
         }
       }}
     >
-      <div className="modal">
+      <div className={`modal ${theme? "dark-mode":""}`}>
         <div className="modal-content">
           <h1>{title}</h1>
           <p>{content}</p>

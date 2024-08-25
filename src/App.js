@@ -23,11 +23,16 @@ const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState("");
   const [modalText, setModalText] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   const oncardclick = (title, text) => {
     setModalTitle(title);
     setModalText(text);    
     setModalOpen(true);
 
+  };
+  const toggleTheme = (isDark) => {
+    setIsDarkMode(isDark);
   };
   const handleOutsideClick = () => {
     setModalOpen(false);
@@ -45,7 +50,7 @@ const App = () => {
               <a href="https://www.instagram.com/adam.osmn/">Instagram</a>
             </div>
           </div>
-          <Switch />
+          <Switch onToggle={toggleTheme}/>
         </div>
       </div>
 
@@ -82,13 +87,21 @@ const App = () => {
           <Card
             title="FX Bot"
             subtitle="Trading"
-            description="Live bot deployed on server to trade FX pairs using custom trade strategy. Implements portfolio optimization and connected to a front end trader dashboard."
+            description="*in progress* Live bot deployed on AWS to trade FX pairs using custom trade strategy. Implements portfolio optimization and connected to a front end trader dashboard."
             image={tImage}
             theme={themes.cremeTheme}
           />
         </div>
         <div onClick={() => oncardclick("RISCV CPU",
-          "To be updated"
+          `This was a project undertaken in a group of 4 for the Instruction Architecture and Compilers module at Imperial College London. The core task was to implement a RISC-V32i Single-Cycle CPU in SystemVerilog, before moving onto a pipelined version. As an extension, teams could also implement a Cache.
+          We were able to implement all parts, including a directly-mapped cache, therefore ranking us in the top teams. The project was an instrumental learning experience in terms of understanding computer architecture, and the importance of good communication and teamwork. 
+          I personally thoroughly enjoyed learning SystemVerilog - as such, I am currently extending the CPU to include static or dynamic branch-prediction schemes;
+          
+          BTFNT -  The "Backwards taken, forwards not taken" strategy is well-suited to programs operating in loops, where we often branch back to the start of the loop at the end of each iteration.
+          2-bit saturating counter - This is a simple scheme that requires two consecutive mispredictions to change the assumption of taking a branch or not.
+          2-level adaptive predictor - This is more complex, using a global history register to predict the outcome of a branch based on the history of all branches in the program. This works well with programs that exhibit patterns in their branching behaviour.`
+          
+         
         )}>
           <Card
             title="RISC-V CPU"
@@ -98,7 +111,9 @@ const App = () => {
             theme={themes.nidoTheme}
           />
         </div>
-        <div onClick={() => oncardclick("BalanceBot", "to be updated")}>
+        <div onClick={() => oncardclick("BalanceBot", 
+          `This was the 2nd year final project undertaken in a group of 2 EIE students and 4 EEE students at Imperial College London. The core task was to construct a remotely-controlled rover(using a provided chassis) capable of 
+          self-balancing according to a control algorithm. `)}>
           <Card
             title="BalanceBot"
             subtitle="Web Development, Computer Vision"
@@ -148,6 +163,7 @@ const App = () => {
           onClose={handleOutsideClick}
           title={modalTitle}
           content={modalText}
+          theme={isDarkMode}
         />
       )}
     </div>

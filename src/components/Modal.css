@@ -14,18 +14,21 @@
 
 
 .modal {
-    background-color: rgb(54, 161, 194);
+    background-color: rgb(227, 224, 224);
     border-radius: 10px;
     width: 80%;
     height:80%;
     
 }
 
-.modal-content {
-    font-size: 20px;
-    text-align: left;
-    width: 40%;
-    padding-right: 2em;
+.modal.dark-mode {
+    background-color: #272727;
+    color: white;}
 
+.modal-content {
+    font-size: 16px;
+    text-align: left;
+    width: 60%;
+    padding-left: 1em;
 }
 

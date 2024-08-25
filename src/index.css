@@ -11,7 +11,16 @@ body.light-mode {
   background-color: white;
   color: black;
 }
+.testbutton {
+  background-color: aqua;
+}
+.testbutton.dark-mode {
+  background-color: #666;
+}
 
+.testbutton.light-mode {
+  background-color: #5cb677;
+}
 input[type="checkbox"] {
   display: none;
 }
