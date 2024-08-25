@@ -109,12 +109,13 @@ const App = () => {
         </div>
       </div>
       <div className="card-container">
-      <div onClick={() => oncardclick("pplTrackrr", "to be updated")}>          <Card
+      <div onClick={() => oncardclick("pplTrackrr", "to be updated")}>          
+        <Card
             title="pplTrackrr"
             subtitle="Computer Vision"
             description="Inspired by COVID-19 room occupancy limits, this project uses OpenCV object-detection on an overhead Raspberry Pi to detect live occupancy."
             theme={themes.blackTheme}
-          />{" "}
+          />
         </div>
         <div onClick={() => oncardclick("Price-Prediction", "to be updated")}>
         <Card

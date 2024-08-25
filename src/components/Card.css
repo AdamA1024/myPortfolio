@@ -7,6 +7,8 @@
     margin: 16px;
     max-width: 300px;
     transition: transform 0.2s;
+    height: 450px;
+    text-align: left;
   }
   
   .card:hover {
@@ -43,9 +45,6 @@
     text-align: left;
   }
   
-  .card-available {
-    font-size: 0.9em;
-  }
   
   .card-description {
     font-size: 0.9em;
