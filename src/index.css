@@ -15,6 +15,9 @@ body.light-mode {
 input[type="checkbox"] {
   display: none;
 }
+.unstyled-button {
+  border:none;
+}
 
 .toggle-label {
   width: 60px;
