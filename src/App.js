@@ -144,7 +144,7 @@ const App = () => {
         
         The approach was primitive for a number of reasons, but largely due to only being suited to stores with separate entrances and exits. Instead, our next iteration was using an object-detection model from OpenCV to identify "people" and discern the direction they were moving in. This was enabled by placing a Pi camera and Raspberry Pi running the code directly above the store entrance.
         
-        Each "person" becomes a "centroid", uniquely identified by an ID and the (x,y) coordinates of the centre of the bounding box around the person. The direction of motion is discerned by looking at the y coordinate of consecutive frames. Lastly, if an ID is detected to be missing for a number of frames, then it is removed from being tracked. This approach allows multiple centroids to be tracked whilst keeping an accurate count of store occupancy.`)}>          
+        Each "person" becomes a "centroid", uniquely identified by an ID and the (x,y) coordinates of the centre of the bounding box around the person. The direction of motion is discerned by looking at the y coordinate of consecutive frames. Lastly, if an ID is detected to be missing for a number of frames, then it is removed from a list of tracked objects. This approach allows multiple centroids to be tracked whilst keeping an accurate count of store occupancy.`)}>          
         <Card
             title="pplTrackrr"
             subtitle="Computer Vision"
